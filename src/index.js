@@ -1,53 +1,55 @@
-/* globals Marionette */
+/* globals Marionette, Backbone */
 
 (function () {
-  // Establish the root object, `window` (`self`) in the browser, or `global` on the server.
-  // We use `self` instead of `window` for `WebWorker` support.
-  const root = (typeof self === 'object' && self.self === self && self) ||
-            (typeof global === 'object' && global.global === global && global);
+  const Lib = {};
 
   // vendor
-  root.ItemView = Marionette.ItemView;
-  root.CollectionView = Marionette.CollectionView;
-  root.CompositeView = Marionette.CompositeView;
-  root.AppRouter = Marionette.AppRouter;
-  root.Router = Marionette.Router;
-  root.Behavior = Marionette.Behavior;
-  root.Region = Marionette.Region;
-  root.Layout = Marionette.LayoutView;
-  root.Application = Marionette.Application;
+  Lib.ItemView = Marionette.ItemView;
+  Lib.CollectionView = Marionette.CollectionView;
+  Lib.CompositeView = Marionette.CompositeView;
+  Lib.AppRouter = Marionette.AppRouter;
+  Lib.Router = Marionette.Router;
+  Lib.Behavior = Marionette.Behavior;
+  Lib.Region = Marionette.Region;
+  Lib.Layout = Marionette.LayoutView;
+  Lib.Application = Marionette.Application;
 
   // own
-  root.Table = require('Table/');
+  Lib.TableView = require('Table/');
   /*
     {
       columns: ['Name', 'Age', ''],
     }
    */
-  root.TableRow = require('TableRow/');
+  Lib.TableRowView = require('TableRow/');
   /*
     {
       actions: ['duplicate', 'edit', 'delete'],
     }
    */
-  root.List = require('List/');
-  root.ListItem = require('ListItem/');
-  root.Modal = require('Modal/');
-  root.Dialog = require('Dialog/');
-  root.Form = require('Form/');
-  root.Grid = require('Grid/');
-  root.BreadCrumbs = require('BreadCrumbs/');
-  root.Dropdown = require('Dropdown/');
-  root.Select = require('Select/');
-  root.Radio = require('Radio/');
-  root.Checkbox = require('Checkbox/');
-  root.Panel = require('Panel/');
-  root.PanelItem = require('PanelItem/');
-  root.Pagination = require('Pagination/');
-  root.Actions = require('Actions/');
-  root.App = require('App/');
-  root.Image = require('Image/');
-  root.Upload = require('Upload/');
-  root.Input = require('Input/');
-  root.Card = require('Card/');
+  Lib.List = require('List/');
+  Lib.ListItem = require('ListItem/');
+  Lib.Modal = require('Modal/');
+  Lib.Dialog = require('Dialog/');
+  Lib.Form = require('Form/');
+  Lib.Grid = require('Grid/');
+  Lib.BreadCrumbs = require('BreadCrumbs/');
+  Lib.Dropdown = require('Dropdown/');
+  Lib.Tags = require('Tags/');
+  Lib.Select = require('Select/');
+  Lib.Panel = require('Panel/');
+  Lib.PanelItem = require('PanelItem/');
+  Lib.Pagination = require('Pagination/');
+  Lib.Actions = require('Actions/');
+  Lib.Card = require('Card/');
+  Lib.Radio = Backbone.Radio;
+  Lib.channel = Lib.Radio.channel;
+  Lib.Intercept = Backbone.Intercept;
+
+  // Establish the root object, `window` (`self`) in the browser, or `global` on the server.
+  // We use `self` instead of `window` for `WebWorker` support.
+  const root = (typeof self === 'object' && self.self === self && self) ||
+            (typeof global === 'object' && global.global === global && global);
+
+  root.OpenDash = Lib;
 }());
