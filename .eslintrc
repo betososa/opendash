@@ -1,7 +1,7 @@
 {
   "extends": "airbnb/base",
   "env": {
-    "browser": false,
+    "browser": true,
     "node": true,
     "mocha": true
   },
@@ -9,9 +9,10 @@
     "no-console": 0,
     "func-names": 0,
     "no-param-reassign": 0,
-    "no-new": 0,
+    "no-new": 0
   },
   "globals": {
-    "_config": true
+    "Marionette": true,
+    "Backbone": true
   }
 }
