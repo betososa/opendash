@@ -1,0 +1,46 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<script src="/node_modules/jquery/dist/jquery.min.js"></script>
+<script src="/node_modules/underscore/underscore-min.js"></script>
+<script src="/node_modules/backbone/backbone-min.js"></script>
+<script src="/node_modules/backbone.marionette/lib/backbone.marionette.min.js"></script>
+<script src="/node_modules/handlebars/dist/handlebars.runtime.min.js"></script>
+
+<body>
+    <main>
+        <div id="table"></table>
+    </main>
+</body>
+
+<script src="/build/build.js"></script>
+
+<script>
+    const Layout = OpenDash.LayoutView.extend({
+        template: false,
+        el: 'main',
+        regions: {
+            table: '#table'
+        }
+    });
+
+    const layout = new Layout();
+
+    const FooterView = OpenDash.ItemView.extend({
+        tagName: 'tr',
+        template: _.template("<td colspan=99><button class='btn btn-default'>press</button></td>"),
+    });
+
+    const RowView = OpenDash.TableRow.extend({
+        template: _.template("<td>a</td><td>b</td><td></td>"),
+    });
+
+    const donkeys = new Backbone.Collection([{ name: 'I' }, { name: 'A' }]);
+
+    const Table = OpenDash.Table.extend({
+        columns: ['A', 'B', ''],
+        childView: RowView,
+        footerView: FooterView,
+    });
+
+    layout.getRegion('table').show(new Table({ collection: donkeys }));
+</script>
