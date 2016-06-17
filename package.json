@@ -1,0 +1,41 @@
+{
+  "name": "opendash",
+  "version": "1.0.0",
+  "description": "![OpenDash Logo](logos/logo.png)",
+  "main": "src/index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "devDependencies": {
+    "backbone": "^1.3.3",
+    "backbone.marionette": "^2.4.7",
+    "jquery": "^3.0.0",
+    "underscore": "^1.8.3",
+    "babel-core": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babelify": "^7.3.0",
+    "body-parser": "^1.15.1",
+    "browserify": "^13.0.1",
+    "express": "^4.14.0",
+    "express-history-api-fallback": "^2.0.0",
+    "gulp": "^3.9.1",
+    "handlebars": "^4.0.5",
+    "hbsfy": "^2.7.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://elgubenis@github.com/elgubenis/opendash.git"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/elgubenis/opendash/issues"
+  },
+  "homepage": "https://github.com/elgubenis/opendash#readme"
+}
